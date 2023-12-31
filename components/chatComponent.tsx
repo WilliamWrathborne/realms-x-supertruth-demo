@@ -7,7 +7,7 @@ export default function ChatComponent() {
 
     const chatBoxStyle: React.CSSProperties = { 
         backgroundImage: 'url("/images/supertruthvector.png")',
-        backgroundSize: '100%',
+        backgroundSize: '50%',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         backgroundBlendMode: 'luminosity',
@@ -20,14 +20,11 @@ export default function ChatComponent() {
         flexDirection: 'column',
         justifyContent: 'space-between',
         position: 'relative',
-        padding: '2px',
+        padding: '5px',
     };
-
-    // Function to process and render message with bold text
     const renderMessageContent = (content: string) => {
         const parts = content.split(/(\*.*?\*)/g); // Splitting by asterisks
         return parts.map((part, index) => {
-            // Check if the part is wrapped in asterisks
             if (part.startsWith("*") && part.endsWith("*")) {
                 return <strong key={index}>{part.slice(1, -1)}</strong>; // Remove asterisks and render bold
             } else {
@@ -41,7 +38,7 @@ export default function ChatComponent() {
             <div style={{ position: 'relative' }}>
                 {messages.map((message: Message) => (
                     <div key={message.id}>
-                        <h3 className="text-xl font-semibold mt-2">
+                        <h3 className="text-xl font-semibold mt-5">
                             {message.role === "assistant" ? "REALMS" : "Supertruth User"}
                         </h3>
 
@@ -54,8 +51,8 @@ export default function ChatComponent() {
                 ))}
             </div>
 
-            <form className="mt-12" onSubmit={handleSubmit}>
-                <p>User Message</p>
+            <form className="mt-14" onSubmit={handleSubmit}>
+                <p><strong>User Message</strong></p>
                 <textarea
                     className="mt-2 w-full"
                     placeholder={"Good Morning Supertruth User."}
@@ -64,9 +61,9 @@ export default function ChatComponent() {
                     onChange={handleInputChange}
                 />
                 <button
-                    className="rounded-md mt-2"
-                    style={{ border: '1px solid black', backgroundColor: 'transparent', padding: '0', fontSize: '1rem' }}>
-                    Send message
+                    className="rounded-md mt-"
+                    style={{ border: '1px solid black', backgroundColor: 'transparent', padding: '0 come see for yourself oh yeah oh wow whoa whoa whoa whoa', fontSize: '1rem' }}>
+                    <strong>Submit Request</strong>
                 </button>
             </form>
         </div>

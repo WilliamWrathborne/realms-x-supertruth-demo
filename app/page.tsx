@@ -14,7 +14,7 @@ export default function Home() {
       backgroundAttachment: 'fixed', // This will make the background image fixed during scroll
       backgroundRepeat: 'no-repeat' // Prevents the background image from repeating
     }}>
-      <div className="bg-white-800 p-3 w-[800px] rounded-md text-black">
+      <div className="bg-white-800 p-3 w-[1500px] rounded-md text-black">
         <h2 className="text-2xl">REALMS</h2>
         <ChatComponent />
       </div>
